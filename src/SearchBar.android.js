@@ -27,7 +27,7 @@ export default class SearchBar extends React.PureComponent {
             this._textInput = view;
           }}
           placeholder="Search"
-          placeholderStyle={styles.searchPlaceholderText}
+          placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
           value={this.state.text}
           autoCapitalize="none"
           autoCorrect={false}
@@ -56,9 +56,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-  },
-  searchPlaceholderText: {
-    color: '#fff',
   },
   searchInput: {
     flex: 1,

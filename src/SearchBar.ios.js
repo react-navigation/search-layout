@@ -41,7 +41,7 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
             <TextInput
               editable={false}
               placeholder="Search"
-              placeholderStyle={styles.searchInputPlaceholderText}
+              placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
               style={styles.searchInput}
             />
 
@@ -118,7 +118,7 @@ export default class SearchBar extends React.PureComponent {
             autoCorrect={false}
             returnKeyType="search"
             placeholder="Search"
-            placeholderStyle={styles.searchInputPlaceholderText}
+            placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
             onSubmitEditing={this._handleSubmit}
             style={styles.searchInput}
           />
@@ -141,7 +141,11 @@ export default class SearchBar extends React.PureComponent {
             hitSlop={{ top: 15, bottom: 15, left: 15, right: 20 }}
             onLayout={this._handleLayoutCancelButton}
             onPress={this._handlePressCancelButton}>
-            <Text style={{ fontSize: 17, color: this.props.tintColor || '#007AFF' }}>
+            <Text
+              style={{
+                fontSize: 17,
+                color: this.props.tintColor || '#007AFF',
+              }}>
               Cancel
             </Text>
           </TouchableOpacity>
@@ -192,7 +196,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: SearchContainerWidth,
     backgroundColor: '#f2f2f2',
-    borderRadius: 6,
+    borderRadius: 5,
     marginHorizontal: SearchContainerHorizontalMargin,
     marginTop: 10,
     paddingLeft: 27,
@@ -208,5 +212,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     paddingTop: 1,
   },
-  searchInputPlaceholderText: {},
 });
