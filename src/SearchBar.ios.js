@@ -42,6 +42,7 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
               editable={false}
               placeholder="Search"
               placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
+              selectionColor={this.props.selectionColor}
               style={styles.searchInput}
             />
 
@@ -103,6 +104,10 @@ export default class SearchBar extends React.PureComponent {
 
   render() {
     let { inputWidth, showCancelButton } = this.state;
+    let searchInputStyle = {};
+    if (this.props.textColor) {
+      searchInputStyle.color = this.props.textColor;
+    }
 
     return (
       <View style={styles.container}>
@@ -120,7 +125,7 @@ export default class SearchBar extends React.PureComponent {
             placeholder="Search"
             placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
             onSubmitEditing={this._handleSubmit}
-            style={styles.searchInput}
+            style={[styles.searchInput, searchInputStyle]}
           />
 
           <SearchIcon />

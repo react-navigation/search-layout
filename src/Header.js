@@ -70,8 +70,8 @@ if (Platform.OS === 'ios') {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#fff',
     paddingTop: STATUSBAR_HEIGHT,
-    backgroundColor: Platform.OS === 'ios' ? '#F7F7F7' : '#FFF',
     height: STATUSBAR_HEIGHT + APPBAR_HEIGHT,
     ...platformContainerStyles,
   },

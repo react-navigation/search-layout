@@ -1,6 +1,9 @@
 {
   "name": "react-navigation-addon-search-layout",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react-native-platform-touchable": "^1.1.1"
+  }
 }

@@ -13,6 +13,8 @@ export default class SearchLayout extends React.Component {
 
   static defaultProps = {
     debounce: 500,
+    headerBackgroundColor: Platform.OS === 'ios' ? '#f7f7f7' : '#fff',
+    headerTintColor: '#000',
   };
 
   state = {
@@ -40,7 +42,12 @@ export default class SearchLayout extends React.Component {
             onChangeQuery={this._handleChangeQuery}
             onSubmit={this._handleSubmit}
             placeholderTextColor={this.props.searchInputPlaceholderTextColor}
-            underlineColorAndroid={this.props.searchInputUnderlineColorAndroid}
+            textColor={this.props.searchInputTextColor}
+            selectionColor={this.props.searchInputSelectionColor}
+            underlineColorAndroid={
+              this.props.searchInputUnderlineColorAndroid ||
+              this.props.headerBackgroundColor
+            }
             tintColor={
               this.props.searchInputTintColor || this.props.headerTintColor
             }
