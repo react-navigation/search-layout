@@ -1,6 +1,7 @@
 import React from 'react';
 import { Animated, Dimensions, Platform, StyleSheet, View } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
+import { Constants } from 'expo';
 
 const X_WIDTH = 375;
 const X_HEIGHT = 812;
@@ -10,7 +11,7 @@ const isIPhoneX =
 
 const NOTCH_HEIGHT = isIPhoneX ? 20 : 0;
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+const STATUSBAR_HEIGHT = Constants.statusBarHeight;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
 @withNavigation
