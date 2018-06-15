@@ -3,20 +3,13 @@ import { Animated, Dimensions, Platform, StyleSheet, View } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
 import { Constants } from 'expo';
 
-const X_WIDTH = 375;
-const X_HEIGHT = 812;
-const { height: D_HEIGHT, width: D_WIDTH } = Dimensions.get('window');
-const isIPhoneX =
-  Platform.OS === 'ios' && (D_HEIGHT === X_HEIGHT && D_WIDTH === X_WIDTH);
-
-const NOTCH_HEIGHT = isIPhoneX ? 20 : 0;
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
 const STATUSBAR_HEIGHT = Constants.statusBarHeight;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
 @withNavigation
 export default class Header extends React.PureComponent {
-  static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT + NOTCH_HEIGHT;
+  static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
 
   _navigateBack = () => {
     this.props.navigation.goBack(null);
@@ -79,8 +72,8 @@ if (Platform.OS === 'ios') {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
-    paddingTop: STATUSBAR_HEIGHT + NOTCH_HEIGHT,
-    height: STATUSBAR_HEIGHT + APPBAR_HEIGHT + NOTCH_HEIGHT,
+    paddingTop: STATUSBAR_HEIGHT,
+    height: STATUSBAR_HEIGHT + APPBAR_HEIGHT,
     ...platformContainerStyles,
   },
   appBar: {
