@@ -1,10 +1,9 @@
 import React from 'react';
-import { Animated, Dimensions, Platform, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, Platform, StyleSheet, View, StatusBar } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
-import { Constants } from 'expo';
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
-const STATUSBAR_HEIGHT = Constants.statusBarHeight;
+const STATUSBAR_HEIGHT = StatusBar.currentHeight;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
 @withNavigation

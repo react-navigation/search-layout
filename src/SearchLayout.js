@@ -1,8 +1,6 @@
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
-// TODO: remove dependency on expo
-import { Constants } from 'expo';
 
 import SearchBar from './SearchBar';
 import Header from './Header';

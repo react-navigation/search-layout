@@ -12,8 +12,7 @@ import {
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
-// TODO: remove dependency on Expo
-import { Icon } from 'expo';
+import { Ionicons } from 'react-native-icons';
 
 const Layout = {
   window: {
@@ -26,7 +25,7 @@ const SearchContainerWidth =
 
 const SearchIcon = () =>
   <View style={styles.searchIconContainer}>
-    <Icon.Ionicons name="ios-search" size={18} color="#ccc" />
+    <Ionicons name="ios-search" size={18} color="#ccc" />
   </View>;
 
 @withNavigation
