@@ -30,17 +30,22 @@ const SearchIcon = () => (
 
 @withNavigation
 class PlaceholderButtonSearchBar extends React.PureComponent {
+  static defaultProps = {
+    placeholder: 'Search',
+    placeholderTextColor: '#ccc',
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <TouchableWithoutFeedback
           hitSlop={{ top: 10, left: 10, bottom: 5, right: 10 }}
           onPress={this._handlePress}>
-          <View style={styles.searchContainer}>
+          <View style={styles.searchContainer} pointerEvents='box-only'>
             <TextInput
               editable={false}
-              placeholder="Search"
-              placeholderTextColor={this.props.placeholderTextColor || '#ccc'}
+              placeholder={this.props.placeholder}
+              placeholderTextColor={this.props.placeholderTextColor}
               selectionColor={this.props.selectionColor}
               style={styles.searchInput}
             />
