@@ -3,14 +3,17 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import SearchBar from './SearchBar';
 import Header from './Header';
 
+const DEFAULT_TINT_COLOR = Platform.OS === 'ios' ? '#007AFF' : '#000';
+
 export default class SearchLayout extends React.Component {
   static SearchBar = SearchBar;
   static Header = Header;
+  static DefaultTintColor = DEFAULT_TINT_COLOR;
 
   static defaultProps = {
     debounce: 500,
-    headerBackgroundColor: Platform.OS === 'ios' ? '#f7f7f7' : '#fff',
-    headerTintColor: '#000',
+    headerBackgroundColor: '#fff',
+    headerTintColor: DEFAULT_TINT_COLOR,
   };
 
   state = {

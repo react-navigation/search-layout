@@ -150,7 +150,7 @@ export default class SearchBar extends React.PureComponent {
                 fontSize: 17,
                 color: this.props.tintColor || '#007AFF',
               }}>
-              {this.props.cancelButtonText || 'Cancel'}}
+              {this.props.cancelButtonText || 'Cancel'}
             </Text>
           </TouchableOpacity>
         </View>
