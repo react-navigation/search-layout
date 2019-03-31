@@ -2,8 +2,7 @@ import React from 'react';
 import { NativeModules, StyleSheet, TextInput, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Touchable from 'react-native-platform-touchable';
-
-import { Icon } from 'expo';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 @withNavigation
 export default class SearchBar extends React.PureComponent {
@@ -48,7 +47,7 @@ export default class SearchBar extends React.PureComponent {
                 hitSlop={{top: 15, left: 10, right: 15, bottom: 15}}
                 style={{ padding: 5 }}
                 background={Touchable.Ripple(this.props.tintColor, true)}>
-                <Icon.Ionicons
+                <Ionicons
                   name="md-close"
                   size={25}
                   color={this.props.tintColor}

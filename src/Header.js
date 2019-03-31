@@ -1,11 +1,14 @@
 import React from 'react';
-import { Animated, Dimensions, Platform, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
-import { Constants } from 'expo';
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
-const STATUSBAR_HEIGHT = Constants.statusBarHeight;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
+
+// @todo: this is static and we don't know if it's visible or not on iOS.
+// need to use a more reliable and cross-platform API when one exists, like
+// LayoutContext.
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 25 : StatusBar.currentHeight;
 
 @withNavigation
 export default class Header extends React.PureComponent {
