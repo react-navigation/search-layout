@@ -1,10 +1,11 @@
 {
   "name": "react-navigation-addon-search-layout",
-  "version": "0.12.4",
+  "version": "0.12.5",
   "main": "index.js",
   "license": "MIT",
   "types": "react-navigation-search-layout.d.ts",
   "dependencies": {
+    "react-native-iphone-x-helper": "^1.2.0",
     "react-native-platform-touchable": "^1.1.1"
   }
 }

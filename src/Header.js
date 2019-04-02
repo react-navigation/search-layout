@@ -1,6 +1,10 @@
 import React from 'react';
 import { Animated, Dimensions, Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
+import { isIphoneX } from 'react-native-iphone-x-helper'
+
+// @todo: make this work properly when in landscape
+const hasNotch = isIphoneX();
 
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
@@ -8,7 +12,7 @@ const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 // @todo: this is static and we don't know if it's visible or not on iOS.
 // need to use a more reliable and cross-platform API when one exists, like
 // LayoutContext.
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 25 : StatusBar.currentHeight;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? (hasNotch ? 40 : 25) : StatusBar.currentHeight;
 
 @withNavigation
 export default class Header extends React.PureComponent {
