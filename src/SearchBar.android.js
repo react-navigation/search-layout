@@ -60,7 +60,7 @@ export default class SearchBar extends React.PureComponent {
   }
 
   _handleClear = () => {
-    this.setState({ text: '' });
+    this._handleChangeText('')
   };
   _handleChangeText = text => {
     this.setState({ text });
