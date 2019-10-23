@@ -7,7 +7,8 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { withNavigation, HeaderBackButton } from 'react-navigation';
+import { withNavigation } from 'react-navigation';
+import { HeaderBackButton } from 'react-navigation-stack';
 import { getInset, getStatusBarHeight } from 'react-native-safe-area-view';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 
