@@ -43,6 +43,7 @@ export default class SearchLayout extends React.Component {
             onSubmit={this._handleSubmit}
             placeholderTextColor={this.props.searchInputPlaceholderTextColor}
             textColor={this.props.searchInputTextColor}
+            textFont={this.props.searchInputTextFont}
             selectionColor={this.props.searchInputSelectionColor}
             underlineColorAndroid={
               this.props.searchInputUnderlineColorAndroid ||
