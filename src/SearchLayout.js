@@ -14,6 +14,7 @@ export default class SearchLayout extends React.Component {
     debounce: 500,
     headerBackgroundColor: '#fff',
     headerTintColor: DEFAULT_TINT_COLOR,
+    hideBackButton: false
   };
 
   state = {
@@ -36,7 +37,7 @@ export default class SearchLayout extends React.Component {
         <Header
           backgroundColor={this.props.headerBackgroundColor}
           tintColor={this.props.headerTintColor}
-          backButton={Platform.OS === 'android'}>
+          backButton={Platform.OS === 'android' && !this.props.hideBackButton}>
           <SearchBar
             onChangeQuery={this._handleChangeQuery}
             onSubmit={this._handleSubmit}
