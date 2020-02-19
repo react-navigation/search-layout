@@ -93,7 +93,11 @@ export default class Header extends React.PureComponent {
   }
 
   _navigateBack = () => {
-    this.props.navigation.goBack(null);
+    if (this.props.onCancelPress) {
+      this.props.onCancelPress(this.props.navigation.goBack);
+    } else {
+      this.props.navigation.goBack();
+    }
   };
 
   _maybeRenderBackButton = () => {
