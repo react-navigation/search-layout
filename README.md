@@ -28,11 +28,11 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
+import { createAppContainer } from 'react-navigation';
 import {
-  createAppContainer,
   createStackNavigator,
   StackViewTransitionConfigs,
-} from 'react-navigation';
+} from 'react-navigation-stack';
 import { RectButton, BorderlessButton } from 'react-native-gesture-handler';
 import SearchLayout from 'react-navigation-addon-search-layout';
 import { Ionicons } from '@expo/vector-icons';
@@ -56,7 +56,7 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello there!</Text>
+        <Text>Hello there!!!</Text>
       </View>
     );
   }
