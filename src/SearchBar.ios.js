@@ -178,7 +178,7 @@ export default class SearchBar extends React.PureComponent {
     if (this.props.onCancelPress) {
       this.props.onCancelPress(this.props.navigation.goBack);
     } else {
-      this.props.navigation.goBack(null);
+      this.props.navigation.goBack();
     }
   };
 }
