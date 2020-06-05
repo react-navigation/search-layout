@@ -51,6 +51,7 @@ export default class SearchLayout extends React.Component {
             tintColor={
               this.props.searchInputTintColor || this.props.headerTintColor
             }
+            cancelButtonText={this.props.cancelButtonText}
           />
         </Header>
 
