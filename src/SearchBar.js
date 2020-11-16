@@ -1,11 +1,9 @@
 import React from 'react';
-import { NativeModules, StyleSheet, TextInput, View } from 'react-native';
-import { withNavigation } from 'react-navigation';
-import Touchable from 'react-native-platform-touchable';
+import { NativeModules, StyleSheet, TextInput, TouchableNativeFeedback, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
-@withNavigation
-export default class SearchBar extends React.PureComponent {
+class SearchBar extends React.PureComponent {
   componentDidMount() {
     requestAnimationFrame(() => {
       this._textInput.focus();
@@ -42,17 +40,17 @@ export default class SearchBar extends React.PureComponent {
         <View
           style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
           {this.state.text
-            ? <Touchable
+            ? <TouchableNativeFeedback
                 onPress={this._handleClear}
                 hitSlop={{top: 15, left: 10, right: 15, bottom: 15}}
                 style={{ padding: 5 }}
-                background={Touchable.Ripple(this.props.tintColor, true)}>
+                background={TouchableNativeFeedback.Ripple(this.props.tintColor, true)}>
                 <Ionicons
                   name="md-close"
                   size={25}
                   color={this.props.tintColor}
                 />
-              </Touchable>
+              </TouchableNativeFeedback>
             : null}
         </View>
       </View>
@@ -72,6 +70,14 @@ export default class SearchBar extends React.PureComponent {
     this.props.onSubmit && this.props.onSubmit(text);
     this._textInput.blur();
   };
+}
+
+export default function (props) {
+    const navigation = useNavigation();
+
+    return (
+        <SearchBar {...props} navigation={navigation} />
+    );
 }
 
 const styles = StyleSheet.create({
