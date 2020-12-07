@@ -10,8 +10,8 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { withNavigation } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 const Layout = {
   window: {
@@ -28,7 +28,6 @@ const SearchIcon = () => (
   </View>
 );
 
-@withNavigation
 class PlaceholderButtonSearchBar extends React.PureComponent {
   static defaultProps = {
     placeholder: 'Search',
@@ -62,8 +61,7 @@ class PlaceholderButtonSearchBar extends React.PureComponent {
   };
 }
 
-@withNavigation
-export default class SearchBar extends React.PureComponent {
+class SearchBar extends React.PureComponent {
   state = {
     text: '',
     showCancelButton: false,
@@ -181,6 +179,14 @@ export default class SearchBar extends React.PureComponent {
       this.props.navigation.goBack();
     }
   };
+}
+
+export default function (props) {
+    const navigation = useNavigation();
+
+    return (
+        <SearchBar {...props} navigation={navigation} />
+    );
 }
 
 const styles = StyleSheet.create({
