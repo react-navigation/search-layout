@@ -5,7 +5,6 @@
   "license": "MIT",
   "types": "react-navigation-search-layout.d.ts",
   "dependencies": {
-    "react-native-iphone-x-helper": "^1.2.0",
-    "react-native-platform-touchable": "^1.1.1"
+    "react-native-iphone-x-helper": "^1.2.0"
   }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Animated,
-  Dimensions,
   Platform,
   StatusBar,
   StyleSheet,
@@ -9,7 +8,7 @@ import {
 } from 'react-native';
 
 import { HeaderBackButton } from '@react-navigation/stack';
-import { getInset, getStatusBarHeight } from 'react-native-safe-area-view';
+import { getStatusBarHeight } from 'react-native-safe-area-view';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 import { useNavigation } from '@react-navigation/native';
 

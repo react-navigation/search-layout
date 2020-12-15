@@ -1,5 +1,5 @@
 import React from 'react';
-import { NativeModules, StyleSheet, TextInput, TouchableNativeFeedback, View } from 'react-native';
+import { StyleSheet, TextInput, TouchableNativeFeedback, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 

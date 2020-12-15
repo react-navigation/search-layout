@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Dimensions,
   LayoutAnimation,
-  NativeModules,
   StyleSheet,
   Text,
   TextInput,
