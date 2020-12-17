@@ -112,8 +112,8 @@ export default class SearchBar extends React.PureComponent {
     if (this.props.textColor) {
       searchInputStyle.color = this.props.textColor;
     }
-    if (this.props.textFont) {
-      searchInputStyle.fontFamily = this.props.textFont;
+    if (this.props.textFontFamily) {
+      searchInputStyle.fontFamily = this.props.textFontFamily;
     }
 
     return (
@@ -154,10 +154,14 @@ export default class SearchBar extends React.PureComponent {
             onLayout={this._handleLayoutCancelButton}
             onPress={this._handlePressCancelButton}>
             <Text
-              style={[{
-                fontSize: 17,
-                color: this.props.tintColor || '#007AFF',
-              }, this.props.textFont ? { fontFamily: this.props.textFont } : null]}>
+              style={[
+                {
+                  fontSize: 17,
+                  color: this.props.tintColor || '#007AFF',
+                },
+                this.props.textFontFamily ? { fontFamily: this.props.textFontFamily } : null
+              ]}
+            >
               {this.props.cancelButtonText || 'Cancel'}
             </Text>
           </TouchableOpacity>

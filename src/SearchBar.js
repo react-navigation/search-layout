@@ -21,8 +21,8 @@ export default class SearchBar extends React.PureComponent {
     if (this.props.textColor) {
       searchInputStyle.color = this.props.textColor;
     }
-    if (this.props.textFont) {
-      searchInputStyle.fontFamily = this.props.textFont;
+    if (this.props.textFontFamily) {
+      searchInputStyle.fontFamily = this.props.textFontFamily;
     }
 
     return (
