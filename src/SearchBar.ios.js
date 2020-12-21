@@ -154,14 +154,11 @@ export default class SearchBar extends React.PureComponent {
             onLayout={this._handleLayoutCancelButton}
             onPress={this._handlePressCancelButton}>
             <Text
-              style={[
-                {
-                  fontSize: 17,
-                  color: this.props.tintColor || '#007AFF',
-                },
-                this.props.textFontFamily ? { fontFamily: this.props.textFontFamily } : null
-              ]}
-            >
+              style={{
+                fontSize: 17,
+                color: this.props.tintColor || '#007AFF',
+                ...(this.props.textFontFamily && { fontFamily: this.props.textFontFamily }),
+              }}>
               {this.props.cancelButtonText || 'Cancel'}
             </Text>
           </TouchableOpacity>
