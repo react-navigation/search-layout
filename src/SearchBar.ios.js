@@ -109,6 +109,9 @@ class SearchBar extends React.PureComponent {
     if (this.props.textColor) {
       searchInputStyle.color = this.props.textColor;
     }
+    if (this.props.textFontFamily) {
+      searchInputStyle.fontFamily = this.props.textFontFamily;
+    }
 
     return (
       <View style={styles.container}>
@@ -151,6 +154,7 @@ class SearchBar extends React.PureComponent {
               style={{
                 fontSize: 17,
                 color: this.props.tintColor || '#007AFF',
+                ...(this.props.textFontFamily && { fontFamily: this.props.textFontFamily }),
               }}>
               {this.props.cancelButtonText || 'Cancel'}
             </Text>

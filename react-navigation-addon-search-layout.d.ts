@@ -20,6 +20,9 @@ declare module 'react-navigation-addon-search-layout' {
     /** Color of text that the user enters into the search box **/
     textColor?: string;
 
+    /** FontFamily of text that the user enters into the search box and for the text shown as cancel button **/
+    textFontFamily?: string;
+
     /** Underline color of the text input on Android **/
     searchInputUnderlineColorAndroid?: string;
 
