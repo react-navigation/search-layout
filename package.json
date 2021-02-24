@@ -1,10 +1,13 @@
 {
-  "name": "react-navigation-addon-search-layout",
-  "version": "0.14.1",
-  "main": "index.js",
-  "license": "MIT",
-  "types": "react-navigation-search-layout.d.ts",
-  "dependencies": {
-    "react-native-iphone-x-helper": "^1.3.1"
+  "private": true,
+  "scripts": {
+    "postinstall": "expo-yarn-workspaces check-workspace-dependencies"
+  },
+  "workspaces": [
+    "example",
+    "lib"
+  ],
+  "devDependencies": {
+    "expo-yarn-workspaces": "~1.3.0"
   }
 }
