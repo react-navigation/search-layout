@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-addon-search-layout",
-  "version": "0.15.1",
+  "version": "0.1.7",
   "main": "index.js",
   "license": "MIT",
   "types": "index.d.ts",
